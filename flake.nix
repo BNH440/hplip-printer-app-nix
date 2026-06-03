@@ -14,5 +14,10 @@
       packages.${system}.default = pkgs.callPackage ./package.nix {
         inherit pappl-retrofit;
       };
+
+      nixosModules.default = { config, lib, pkgs, ... }: {
+        imports = [ ./nixos-module.nix ];
+        services.hplip-printer-app.package = lib.mkDefault self.packages.${pkgs.system}.default;
+      };
     };
 }

@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-QZe7aPOeTBd0tSpNULnx//8B+UQxXX7c+TyxzfCjU2c=";
   };
 
-  nativeBuildInputs = [ pkg-config makeWrapper ];
+  nativeBuildInputs = [ pkg-config makeWrapper perl ];
 
   buildInputs = [
     cups
